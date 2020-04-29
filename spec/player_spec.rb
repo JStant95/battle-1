@@ -5,4 +5,10 @@ describe Player do
     subject = Player.new("Ed")
     expect(subject.name).to eq 'Ed'
   end
+
+  it '#attack minuses 10HP from total' do
+    subject = Player.new("Ed")
+    subject.attack
+    expect(subject.HP).to eq(90)
+  end
 end

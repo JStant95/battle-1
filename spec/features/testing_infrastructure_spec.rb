@@ -19,4 +19,11 @@ feature 'Start Battle' do
     click_on 'Attack'
     expect(page).to have_content('Jed hit Ed')
   end
+
+  scenario 'Attack reduces opponents HP' do
+    sign_in_and_play
+    click_on 'Start!'
+    click_on 'Attack'
+    expect(page).to have_content('Ed: 90HP')
+  end
 end
